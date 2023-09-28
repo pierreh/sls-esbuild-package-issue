@@ -1,0 +1,34 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2016",
+        "lib": ["es2019", "esnext.asynciterable"],
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "allowJs": false,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noImplicitThis": true,
+        "strictNullChecks": true,
+        "strict": true,
+        "strictFunctionTypes": true,
+        "noImplicitReturns": true,
+        "preserveConstEnums": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "forceConsistentCasingInFileNames": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "ignoreDeprecations": "5.0"
+    },
+    "exclude": ["node_modules", "**/node_modules"],
+    "cliOptions": {
+        "exclude": ["node_modules", "**/node_modules"]
+    },
+    "types": ["typePatches", "jest"],
+    "awesomeTypescriptLoaderOptions": {
+        "transpileOnly": true,
+        "sourceMap": true
+    }
+}

@@ -1,0 +1,43 @@
+service: esbuild-test
+
+frameworkVersion: "3"
+
+plugins:
+  - serverless-esbuild
+  # - serverless-plugin-typescript
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: us-east-1
+  
+custom:
+  esbuild:
+    keepOutputDirectory: true
+    # platform: node
+    # minify: true
+    # sourcemap: true
+    # sourcesContent: false
+    # keepNames: false
+    # exclude:
+    exclude:
+      - dayjs
+    #   - "@aws-sdk/*"
+    #   - "@smitty/*"
+    #   - "aws-sdk"
+
+# package:
+  # individually: true
+  # patterns:
+#     - "./shared/config/**"
+#     - '!node_modules/aws-sdk/**'
+#     - '!node_modules/@aws-sdk/**'
+#     - '!node_modules/typescript/**'
+#     - '!node_modules/@smithy/**'
+#     - '!node_modules/@types/**'
+
+functions:
+  esbuildHandler:
+    name: ${self:provider.stage}-${self:service}-handler
+    handler: src/handler.handler
